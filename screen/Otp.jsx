@@ -1,6 +1,6 @@
-import { View, StyleSheet, Text, TextInput } from "react-native";
+import { View, StyleSheet, Text, TextInput, Button } from "react-native";
 import React, { useState, useRef } from "react";
-import { Button } from "react-native-paper";
+// import { Button } from "react-native-paper";
 
 const Otp = () => {
   const [otp, setOTP] = useState(["", "", "", ""]);
@@ -21,9 +21,14 @@ const Otp = () => {
       inputs.current[index - 1].focus();
     }
   };
+  const handleSubmit = () => {
+    alert(otp.join(""))
+    console.log(otp.join(""));
+  };
+
   return (
     <View style={styles.container}>
-      <Text>OTP verification</Text>
+      <Text style={styles.otp}>OTP verification</Text>
       <Text>
         Enter the verification code that we just sent on your Mobile Number.
       </Text>
@@ -43,6 +48,12 @@ const Otp = () => {
           />
         ))}
       </View>
+      <View>
+        <Button title="Verify" onPress={handleSubmit} />
+      </View>
+      <View style={styles.resendcontainer}>
+        <Text>Didnt recieved the code ? Resend</Text>
+      </View>
     </View>
   );
 };
@@ -50,12 +61,18 @@ const Otp = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "start",
+    justifyContent: "center",
   },
   otpContainer: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     alignItems: "center",
     marginTop: 20,
+  },
+  otp: {
+    fontSize: 40,
+    fontWeight: "900",
   },
   input: {
     width: 50,
@@ -64,6 +81,10 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     textAlign: "center",
     marginHorizontal: 5,
+    borderColor: "transparent",
+    backgroundColor: "lightgray",
+    fontSize: 25,
+    fontWeight: "500",
   },
   text: {
     color: "black",
@@ -71,6 +92,10 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     textAlign: "center",
   },
+  resendcontainer:{
+    alignItems: "center",
+    marginTop: 20,
+  }
 });
 
 export default Otp;
