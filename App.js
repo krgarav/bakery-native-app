@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Cakes">
         <Stack.Screen name="Home" component={Auth} options={{ headerShown: false }} />
         <Stack.Screen name="Otp" component={Otp} options={{ headerShown: false }} />
         <Stack.Screen name="Cakes" component={Cakes} options={{ headerShown: false }} />
