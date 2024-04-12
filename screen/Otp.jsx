@@ -2,7 +2,7 @@ import { View, StyleSheet, Text, TextInput, Button } from "react-native";
 import React, { useState, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const Otp = () => {
+const Otp = ({navigation}) => {
   const [otp, setOTP] = useState(["", "", "", ""]);
   const inputs = useRef([]);
 
@@ -22,7 +22,8 @@ const Otp = () => {
     }
   };
   const handleSubmit = () => {
-    alert(otp.join(""));
+    // alert(otp.join(""));
+    navigation.navigate("Cakes")
     console.log(otp.join(""));
   };
 
@@ -51,7 +52,7 @@ const Otp = () => {
         </View>
         <Text></Text>
         <View>
-          <Button title="Verify" onPress={handleSubmit} />
+          <Button color="#FF6D6A" title="Verify" onPress={handleSubmit} />
         </View>
         <View style={styles.resendcontainer}>
           <Text>Didnt recieved the code ? Resend</Text>

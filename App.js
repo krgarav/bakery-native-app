@@ -4,13 +4,15 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import {createNativeStackNavigator} from "@react-navigation/native"
 import Auth from "./screen/Mobile"
 import Otp from './screen/Otp';
+import Cakes from './screen/Cakes';
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Cakes">
         <Stack.Screen name="Home" component={Auth} />
         <Stack.Screen name="Otp" component={Otp} />
+        <Stack.Screen name="Cakes" component={Cakes} />
       </Stack.Navigator>
     </NavigationContainer>
   );

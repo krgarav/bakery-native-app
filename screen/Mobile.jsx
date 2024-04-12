@@ -20,18 +20,16 @@ export default function App({ navigation }) {
         <Text></Text>
         <TextInput
           style={styles.input}
-          // onChangeText={onChangeNumber}
-          // value={number}
-          placeholder="Enter your email number"
+          placeholder="Enter your email id"
           keyboardType="email-address"
         />
+        <Text></Text>
+        <Button
+          title="send code"
+          color="#FF6D6A"
+          onPress={() => navigation.navigate("Otp")}
+        />
       </SafeAreaView>
-      <Text></Text>
-      <Button
-        title="send code"
-        color="purple"
-        onPress={() => navigation.navigate("Otp")}
-      />
     </View>
   );
 }
@@ -39,7 +37,6 @@ export default function App({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -55,9 +52,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
+    alignContent:"flex-start",
+    height: 50,
+    margin: 5,
+    borderWidth: 2,
     padding: 10,
   },
   area: {
@@ -66,6 +64,6 @@ const styles = StyleSheet.create({
   subtext: {
     textAlign: "center",
     paddingTop: 10,
-    color: "lightgrey",
+    color: "#A9A9A9",
   },
 });
