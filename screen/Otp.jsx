@@ -1,6 +1,6 @@
 import { View, StyleSheet, Text, TextInput, Button } from "react-native";
 import React, { useState, useRef } from "react";
-// import { Button } from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Otp = () => {
   const [otp, setOTP] = useState(["", "", "", ""]);
@@ -22,38 +22,41 @@ const Otp = () => {
     }
   };
   const handleSubmit = () => {
-    alert(otp.join(""))
+    alert(otp.join(""));
     console.log(otp.join(""));
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.otp}>OTP verification</Text>
-      <Text>
-        Enter the verification code that we just sent on your Mobile Number.
-      </Text>
-      <View style={styles.otpContainer}>
-        {otp.map((value, index) => (
-          <TextInput
-            key={index}
-            ref={(ref) => (inputs.current[index] = ref)}
-            style={styles.input}
-            maxLength={1}
-            keyboardType="numeric"
-            value={value}
-            onChangeText={(text) => handleChange(index, text)}
-            onKeyPress={({ nativeEvent }) =>
-              nativeEvent.key === "Backspace" && handleBackspace(index, value)
-            }
-          />
-        ))}
-      </View>
-      <View>
-        <Button title="Verify" onPress={handleSubmit} />
-      </View>
-      <View style={styles.resendcontainer}>
-        <Text>Didnt recieved the code ? Resend</Text>
-      </View>
+      <SafeAreaView style={styles.contentArea}>
+        <Text style={styles.otp}> Email OTP verification</Text>
+        <Text>
+          Enter the verification code that we just sent to your Email Address.
+        </Text>
+        <View style={styles.otpContainer}>
+          {otp.map((value, index) => (
+            <TextInput
+              key={index}
+              ref={(ref) => (inputs.current[index] = ref)}
+              style={styles.input}
+              maxLength={1}
+              keyboardType="numeric"
+              value={value}
+              onChangeText={(text) => handleChange(index, text)}
+              onKeyPress={({ nativeEvent }) =>
+                nativeEvent.key === "Backspace" && handleBackspace(index, value)
+              }
+            />
+          ))}
+        </View>
+        <Text></Text>
+        <View>
+          <Button title="Verify" onPress={handleSubmit} />
+        </View>
+        <View style={styles.resendcontainer}>
+          <Text>Didnt recieved the code ? Resend</Text>
+        </View>
+      </SafeAreaView>
     </View>
   );
 };
@@ -61,7 +64,7 @@ const Otp = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "start",
+    alignItems: "center",
     justifyContent: "center",
   },
   otpContainer: {
@@ -70,9 +73,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 20,
   },
+  contentArea: {
+    width: "80%",
+  },
   otp: {
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: "900",
+    margin: 0,
   },
   input: {
     width: 50,
@@ -92,10 +99,10 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     textAlign: "center",
   },
-  resendcontainer:{
+  resendcontainer: {
     alignItems: "center",
     marginTop: 20,
-  }
+  },
 });
 
 export default Otp;

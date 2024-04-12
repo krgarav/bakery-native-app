@@ -13,26 +13,24 @@ export default function App({ navigation }) {
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.area}>
-        <Text style={styles.text}>Enter Your Mobile Number</Text>
+        <Text style={styles.text}>Enter Your Email Id</Text>
         <Text style={styles.subtext}>
           We will send you the 4 digit verification code
         </Text>
         <Text></Text>
-
         <TextInput
           style={styles.input}
           // onChangeText={onChangeNumber}
           // value={number}
-          placeholder="Enter your mobile number"
-          keyboardType="numeric"
+          placeholder="Enter your email number"
+          keyboardType="email-address"
         />
       </SafeAreaView>
       <Text></Text>
-
       <Button
         title="send code"
         color="purple"
-        onPress={() => navigation.navigate("otp")}
+        onPress={() => navigation.navigate("Otp")}
       />
     </View>
   );
@@ -49,7 +47,6 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     width: "100%",
     height: "100%",
-    // opacity: 0.5,
   },
   text: {
     color: "black",
