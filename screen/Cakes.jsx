@@ -1,6 +1,7 @@
 import React from "react";
 import { ScrollView, View, Text, StyleSheet } from "react-native";
 import Eventblock from "../component/eventblock";
+import Bakeries from "../component/Bakeries";
 
 const Cakes = () => {
   return (
@@ -12,6 +13,7 @@ const Cakes = () => {
 
       <ScrollView>
         <Eventblock />
+        <Bakeries />
       </ScrollView>
     </View>
   );
@@ -22,12 +24,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // padding: 10,
-    // flexDirection: "row"
+    backgroundColor: "#fff",
   },
   header: {
     // borderWidth: ,
     padding: 10,
-    elevation: 1,
+    elevation: 10,
     backgroundColor: "#fff",
   },
 });
