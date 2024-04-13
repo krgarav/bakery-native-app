@@ -2,6 +2,7 @@ import React from "react";
 import { ScrollView, View, Text, StyleSheet } from "react-native";
 import Eventblock from "../component/eventblock";
 import Bakeries from "../component/Bakeries";
+import Veggiebox from "../component/Veggiebox";
 
 const Cakes = () => {
   return (
@@ -14,6 +15,7 @@ const Cakes = () => {
       <ScrollView>
         <Eventblock />
         <Bakeries />
+        <Veggiebox />
       </ScrollView>
     </View>
   );
@@ -24,7 +26,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // padding: 10,
-    marginTop : "10%",
+    marginTop: "10%",
     backgroundColor: "#fff",
   },
   header: {
