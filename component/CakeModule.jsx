@@ -31,8 +31,7 @@ export default function CakeModule(props) {
 const styles = StyleSheet.create({
   bakerContainer: {
     backgroundColor: "pink",
-    // borderColor : "black",
-    // borderWidth : 1,
+    elevation : 10 ,
     borderRadius: 10,
     zIndex: 999,
   },

@@ -19,9 +19,6 @@ const Bakeries = () => {
         <CakeModule />
         <CakeModule />
       </ScrollView>
-      <Button icon="" mode="contained">
-        See all
-      </Button>
     </View>
   );
 };
