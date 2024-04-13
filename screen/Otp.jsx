@@ -58,8 +58,6 @@ const Otp = ({ navigation }) => {
           <Text>
             Didnt recieved the code ?
             <Btn
-              // icon="camera"
-              // mode="contained"
               onPress={() => console.log("Pressed")}
             >
               Resend

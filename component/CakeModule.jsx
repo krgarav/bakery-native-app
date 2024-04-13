@@ -3,7 +3,7 @@ import React from "react";
 
 export default function CakeModule(props) {
   return (
-    <View style={styles.bakerContainer}>
+    <View style={styles.bakerContainer} >
       <Image
         style={{
           width: "100%",

@@ -9,8 +9,8 @@ const Cakes = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text>Pre Order From</Text>
-        <Text>Connaught Place</Text>
+        <Text style={styles.headText}>Pre Order From</Text>
+        <Text style={styles.subText}>Connaught Place</Text>
       </View>
 
       <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -43,6 +43,15 @@ const styles = StyleSheet.create({
     // width: "95%",
     // justifyContent : "center",
     // alignContent : "center"
+  },
+  headText: {
+    fontSize: 15,
+    fontWeight: "500",
+    color: "#636363",
+  },
+  subText: {
+    fontSize: 22,
+    fontWeight: "700",
   },
 });
 
