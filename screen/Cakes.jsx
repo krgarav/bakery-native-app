@@ -5,7 +5,7 @@ import Bakeries from "../component/Bakeries";
 import Veggiebox from "../component/Veggiebox";
 import PopularOnes from "../component/popularOnes";
 import { Ionicons } from "@expo/vector-icons";
-const Cakes = () => {
+const Cakes = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -21,7 +21,7 @@ const Cakes = () => {
         <Bakeries />
         <Text></Text>
         <Veggiebox />
-        <PopularOnes />
+        <PopularOnes navigation={navigation} />
       </ScrollView>
     </View>
   );
@@ -52,8 +52,8 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     color: "#636363",
     alignContent: "center",
-    justifyContent : "center",
-    alignItems : "center"
+    justifyContent: "center",
+    alignItems: "center",
   },
   subText: {
     fontSize: 22,

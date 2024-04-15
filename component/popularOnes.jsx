@@ -1,29 +1,29 @@
 import { Text, StyleSheet, View, ScrollView, Pressable } from "react-native";
 import React, { useState } from "react";
 import SingleCake from "./singleCake";
-import Image from "../Resource/restaurantImg";
+import ImageUrl from "../Resource/restaurantImg";
 
-export default function PopularOnes() {
+export default function PopularOnes(props) {
   const [state, setState] = useState(false);
-
+  const { navigation } = props;
   const pressHandler = (imgUrl) => {
-    console.log(imgUrl);
+    navigation.navigate("Cake_detail", { imgUrl: imgUrl });
   };
   const pressInHandler = () => {
-    console.log("Pressed");
+    // console.log("Pressed");
   };
 
   const PressOutHandler = () => {
-    console.log("Press out");
+    // console.log("Press out");
   };
 
-  const module = Image.map((item, index) => {
+  const module = ImageUrl.map((item, index) => {
     return (
       <Pressable
         onPress={() => pressHandler(item)}
         onPressIn={pressInHandler}
         // onPressOut={PressOutHandler}
-    
+        key={index}
         style={({ pressed }) => [
           {
             backgroundColor: pressed ? "lightgray" : "white",
@@ -31,7 +31,7 @@ export default function PopularOnes() {
           styles.pressable,
         ]}
       >
-        <SingleCake key={index} imgUrl={item} />
+        <SingleCake imgUrl={item} />
       </Pressable>
     );
   });
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignSelf: "center",
   },
-  pressable:{
-    borderRadius : 10
-  }
+  pressable: {
+    borderRadius: 10,
+  },
 });

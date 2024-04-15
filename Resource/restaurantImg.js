@@ -1,4 +1,4 @@
-const Image = [
+const ImageUrl = [
     "https://d4t7t8y8xqo0t.cloudfront.net/resized/720X480/restaurant%2F690304%2Frestaurant020230824104845.jpg",
     "https://www.eatthis.com/wp-content/uploads/sites/4/2023/06/the-cheesecake-factory-cheesecakes.jpg?quality=82&strip=1",
     "https://i0.wp.com/carmellasdessertbar.com/wp-content/uploads/2022/10/carmellas_social_share.jpg",
@@ -7,4 +7,4 @@ const Image = [
     "https://brunchandcake.com/images/brunchandcake-saudi-riyadh-opening-soon-franchise.jpg"
 ]
 
-export default Image;
+export default ImageUrl;
